@@ -6,7 +6,7 @@ csv_dir=$3
 # 1. backup old database if it exists
 pg_dump -h localhost -p 5432 -U $db_user -Fc -b -v -f "./bak/old_$db_name.backup" $db_name
 # ~1. create a new database if it does not exist
-#createdb -O db_user db_name
+#createdb -O $db_user $db_name
 #psql -d $db_name -U $db_user -c "CREATE EXTENSION postgis;"
 # 2. create initial multimodal graph tables including
 # modes, switch_types, edges, vertices and switch_points, populate initial data in 
